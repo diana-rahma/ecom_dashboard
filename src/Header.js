@@ -3,6 +3,7 @@ import {Container} from 'react-bootstrap';
 import {Nav} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
+
 function Header() {
     return (
         <div>
@@ -10,10 +11,10 @@ function Header() {
                 <Container>
                     <Navbar.Brand href="#home">e-Commerce</Navbar.Brand>
                     <Nav className="me-auto navbar-wrapper">
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
-                        <Link to="/add">Add Products</Link>
-                        <Link to="/update">Update Products</Link>
+                        <Link to="/Login">Login</Link>
+                        <Link to="/Register">Register</Link>
+                        <Link to="/AddProducts">Add Products</Link>
+                        <Link to="/UpdateProducts">Update Products</Link>
                     </Nav>
                 </Container>
             </Navbar>

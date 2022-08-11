@@ -1,4 +1,4 @@
-function login() {
+function Login() {
     return(
         <div>
             <h1>Halaman Login</h1>
@@ -6,4 +6,4 @@ function login() {
     )
 }
 
-export default login 
+export default Login
