@@ -3,7 +3,7 @@ function AddProducts() {
     return(
         <div>
             <Header/>
-            <h1>Halaman AddProducts</h1>
+            <h1>Halaman Add Products</h1>
         </div> 
     );
 }
