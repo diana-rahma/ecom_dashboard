@@ -2,17 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 import { Button } from 'react-bootstrap';
 import Header from './Header';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import AddProducts from './AddProducts';
 import UpdateProducts from './UpdateProducts';
 import Protected from './Protected';
+import ProductList from './ProductList';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Switch>
         {/* <Header /> */}
         <Route path="/Login">
           <Login />
@@ -28,6 +30,11 @@ function App() {
         <Protected Cmp={UpdateProducts} />
           {/* <UpdateProducts /> */}
         </Route>
+        <Route path="/">
+          <Protected Cmp={ProductList} />
+          {/* <AddProducts /> */}
+        </Route>
+        </Switch>
       </BrowserRouter>
     </div>
   );
