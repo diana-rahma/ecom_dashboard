@@ -15,6 +15,27 @@ function ProductList() {
     setData(result);
   }
 
+  async function deleteOperation(id){
+
+    if(window.confirm("Are you sure to delete product with id = "+id+" ?")) {
+      let result = await fetch("http://localhost:8000/api/delete/" + id, {
+        method: 'DELETE',
+      });
+      result = await result.json();
+      console.warn(result);
+      getData();
+      alert("Product has been deleted");
+    }else{
+      getData();
+    }
+  }
+
+  async function getData(){
+    let result = await fetch("http://localhost:8000/api/list");
+    result = await result.json();
+    setData(result);
+  }
+
   return (
     <div>
       <Header />
@@ -28,6 +49,7 @@ function ProductList() {
               <th>Price</th>
               <th>Description</th>
               <th>Image</th>
+              <th>Action</th>
             </tr>
           </thead>
 
@@ -44,6 +66,9 @@ function ProductList() {
                     src={"http://localhost:8000/" + item.file_path}
                     alt="foto_produk"
                   ></img>
+                </td>
+                <td>
+                  <span className="btnDelete" onClick={() => deleteOperation(item.id)}>Delete</span>
                 </td>
               </tr>
             </tbody>
